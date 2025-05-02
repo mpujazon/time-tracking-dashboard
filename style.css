@@ -1,0 +1,227 @@
+/* Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+/* Variables */
+:root{
+    --clr-white: #FFF;
+    --clr-black: #000;
+    --clr-navy-950: #0E1323;
+    --clr-navy-900: #1C204B;
+    --clr-navy-800: #33397A;
+    --clr-navy-200: #BBC0FF;
+    --clr-orange: #FF8B64;
+    --clr-purple-700: #7335D2;
+    --clr-purple-600: #5747EA;
+    --clr-purple-500: #7078C9;
+    --clr-blue-300:  #55C2E6;
+    --clr-pink-400: #FF5E7D;
+    --clr-green-400: #4BCF82;
+    --clr-yellow-300: #F1C75B;
+    --clr-grey-200: #D8D8D8;
+
+    --spacing-0: 0rem;
+    --spacing-100: .5rem;
+    --spacing-200: 1rem;
+    --spacing-300: 1.5rem;
+    --spacing-400: 2rem;
+    --spacing-500: 2.5rem;
+}
+
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* General style, mobile */
+body{
+    font-family: 'Rubik', sans-serif;
+    background-color: var(--clr-navy-950);
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    padding: 5rem var(--spacing-300);
+    gap: var(--spacing-300);
+}
+
+.main-card{
+    background-color: var(--clr-navy-900);
+    border-radius: 15px;
+}
+
+.user-card{
+    background-color: var(--clr-purple-600);
+    border-radius: 15px;
+    padding: var(--spacing-400);
+    display: flex;
+    gap: var(--spacing-300);
+    align-items: center;
+    justify-content: center;
+}
+
+.user-card img {
+    width: 64px;
+    border: 3px solid var(--clr-white);
+    border-radius: 50%;
+}
+
+.user-card p{
+    color: var(--clr-navy-200);
+    font-size: .9375rem;
+    line-height: 1.125rem;
+}
+
+.user-card h1{
+    color: var(--clr-white);
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 28px;
+}
+
+.time-categories{
+    padding: var(--spacing-300);
+    display: flex;
+    justify-content: space-around;
+}
+
+.time-categories button{
+    font-family: 'Rubik', sans-serif;
+    border: 0;
+    background-color: transparent;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 21px;
+    color: var(--clr-purple-500);
+    transition: scale .2s ease-in-out;
+}
+
+.time-categories button:hover{
+    color: var(--clr-white);
+    scale: 1.07;
+    cursor: pointer;
+}
+
+.time-categories button.active{
+    color: var(--clr-white);
+}
+
+.category-card{
+    border-radius: 15px;
+    color: var(--clr-white);
+}
+
+.category-card__tab{
+    background-color: var(--clr-orange);
+    border-radius: 15px 15px 0 0;
+    display: flex;
+    flex-direction: row-reverse;
+    padding-right: 14px;
+    height: 80px;
+    overflow: hidden;
+}
+
+#play-card .category-card__tab{
+    background-color: var(--clr-blue-300);
+}
+
+#study-card .category-card__tab{
+    background-color: var(--clr-pink-400);
+}
+
+#exercise-card .category-card__tab{
+    background-color: var(--clr-green-400);
+}
+
+#social-card .category-card__tab{
+    background-color: var(--clr-purple-700);
+}
+
+#self-care-card .category-card__tab{
+    background-color: var(--clr-yellow-300);
+}
+
+.category-card__tab img{
+    position: relative;
+    bottom: 10px;
+}
+
+#exercise-card .category-card__tab img{
+    scale: .68;
+    position: relative;
+    bottom: 13px;
+    left: 20px;
+}
+
+#social-card .category-card__tab img{
+    scale: 1.2;
+    position: relative;
+    bottom: 5px;
+}
+
+#self-care-card .category-card__tab img{
+    scale: .8;
+    position: relative;
+    bottom: 20px;
+    left: 10px;
+}
+
+.category-card__info{
+    background-color: var(--clr-navy-900);
+    border-radius: 15px;
+    padding: var(--spacing-300);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-100);
+    margin-top: -42px;
+    position: relative;
+}
+
+.category-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.category-row .category{
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 21px;
+}
+
+.category-row img{
+    height: 100%;
+}
+
+.info-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info-row .hours{
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 2.375rem;
+}
+
+.info-row .last-period{
+    font-size: .9375rem;
+    line-height: 18px;
+    color: var(--clr-navy-200);
+}
+
+.attribution {
+    font-size: 11px; text-align: center;
+    color: var(--clr-navy-200);
+    padding: 10px;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
