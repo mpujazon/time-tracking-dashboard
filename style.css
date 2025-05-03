@@ -66,8 +66,8 @@ body{
 }
 
 .user-card img {
-    width: 64px;
-    border: 3px solid var(--clr-white);
+    width: 4rem;
+    border: .1875rem solid var(--clr-white);
     border-radius: 50%;
 }
 
@@ -81,13 +81,14 @@ body{
     color: var(--clr-white);
     font-size: 1.5rem;
     font-weight: 300;
-    line-height: 28px;
+    line-height: 1.75rem;
 }
 
 .time-categories{
     padding: var(--spacing-300);
     display: flex;
     justify-content: space-around;
+    
 }
 
 .time-categories button{
@@ -96,9 +97,11 @@ body{
     background-color: transparent;
     font-size: 1.125rem;
     font-weight: 400;
-    line-height: 21px;
+    line-height: 1.3125rem;
     color: var(--clr-purple-500);
     transition: scale .2s ease-in-out;
+    width: 100%;
+    max-width: 6.8125rem;
 }
 
 .time-categories button:hover{
@@ -121,8 +124,8 @@ body{
     border-radius: 15px 15px 0 0;
     display: flex;
     flex-direction: row-reverse;
-    padding-right: 14px;
-    height: 80px;
+    padding-right: .875rem;
+    height: 5rem;
     overflow: hidden;
 }
 
@@ -148,14 +151,14 @@ body{
 
 .category-card__tab img{
     position: relative;
-    bottom: 10px;
+    bottom: .625rem;
 }
 
 #exercise-card .category-card__tab img{
     scale: .68;
     position: relative;
-    bottom: 13px;
-    left: 20px;
+    bottom: .8125rem;
+    left: 1.25rem;
 }
 
 #social-card .category-card__tab img{
@@ -167,8 +170,8 @@ body{
 #self-care-card .category-card__tab img{
     scale: .8;
     position: relative;
-    bottom: 20px;
-    left: 10px;
+    bottom: 1.25rem;
+    left: .625rem;
 }
 
 .category-card__info{
@@ -178,7 +181,7 @@ body{
     display: flex;
     flex-direction: column;
     gap: var(--spacing-100);
-    margin-top: -42px;
+    margin-top: -2.625rem;
     position: relative;
 }
 
@@ -191,7 +194,7 @@ body{
 .category-row .category{
     font-size: 1.125rem;
     font-weight: 500;
-    line-height: 21px;
+    line-height: 1.3125rem;
 }
 
 .category-row img{
@@ -212,16 +215,98 @@ body{
 
 .info-row .last-period{
     font-size: .9375rem;
-    line-height: 18px;
+    line-height: 1.125rem;
     color: var(--clr-navy-200);
 }
 
 .attribution {
-    font-size: 11px; text-align: center;
+    font-size: .6875rem;
+    text-align: center;
     color: var(--clr-navy-200);
-    padding: 10px;
+    padding: .625rem;
 }
 
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 37.5rem) {
+    body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .grid-container{
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, auto);
+        max-width: 38.25rem;
+        padding: 0;
+    }
+    .main-card{
+        grid-column: 1 / 4;
+        grid-row: 1/2;
+    }
+
+    .category-card__tab img{
+        scale: .6;
+        bottom: 1.3rem;
+        left: 1rem;
+    }
+
+    #exercise-card .category-card__tab img{
+        scale: .45;
+        position: relative;
+        bottom: 1.5rem;
+        left: 2.1875rem;
+    }
+    
+    #social-card .category-card__tab img{
+        scale: .8;
+        position: relative;
+        bottom: .9375rem;
+        left: .75rem;
+    }
+    
+    #self-care-card .category-card__tab img{
+        scale: .55;
+        position: relative;
+        bottom: 1.6875rem;
+        left: 1.25rem;
+    }
+
+    .category-card__info{
+        margin-top: -3.2rem;
+    }
+    .user-card{
+        justify-content: flex-start;
+    }
+
+    .time-categories{
+        justify-content: center;
+        text-align: center;
+        gap: .5rem;
+    }
+
+    .category-card__info .ellipsis-icon{
+        scale: .7;
+    }
+
+    .info-row{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .info-row .hours{
+        font-size: 3.5rem;
+        line-height: 4.125rem;
+    }
+
+    .attribution{
+        position: absolute;
+        bottom: 10px;
+    }
+
 }
