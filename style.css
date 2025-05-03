@@ -76,13 +76,13 @@ body{
     font-weight: 300;
     line-height: 1.75rem;
 }
-.time-categories{
+#time-categories{
     padding: var(--spacing-300);
     display: flex;
     justify-content: space-around;
     
 }
-.time-categories button{
+#time-categories button{
     font-family: 'Rubik', sans-serif;
     border: 0;
     background-color: transparent;
@@ -94,12 +94,12 @@ body{
     width: 100%;
     max-width: 6.8125rem;
 }
-.time-categories button:hover{
+#time-categories button:hover{
     color: var(--clr-white);
     scale: 1.07;
     cursor: pointer;
 }
-.time-categories button.active{
+#time-categories button.active{
     color: var(--clr-white);
 }
 .category-card{
@@ -248,7 +248,7 @@ body{
     .user-card{
         justify-content: flex-start;
     }
-    .time-categories{
+    #time-categories{
         justify-content: center;
         text-align: center;
         gap: .5rem;
@@ -270,6 +270,7 @@ body{
     }
 }
 
+/* TODO: REVIEW CARD WIDTHS */
 @media (min-width: 67.5rem){
     .grid-container{
         grid-template-columns: repeat(4, 1fr);
@@ -289,15 +290,19 @@ body{
     .user-card__text{
         width: 60%;
     }
+    .user-card__text h1{
+    }
+    .user-card__text p{
+    }
     .user-card img{
         width: 4.875rem;
     }
-    .time-categories{
+    #time-categories{
         flex-direction: column;
         height: 33%;
         justify-content: space-between;
     }
-    .time-categories button{
+    #time-categories button{
         text-align: left;
     }
     .category-card__info{
