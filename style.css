@@ -33,7 +33,7 @@
     padding: 0;
 }
 
-/* General style, mobile */
+/* General styles, mobile */
 body{
     font-family: 'Rubik', sans-serif;
     background-color: var(--clr-navy-950);
@@ -201,6 +201,7 @@ body{
     color: hsl(228, 45%, 44%);
 }
 
+/* Tablet breakpoint, from 650px */
 @media (min-width: 40.625rem) {
     body{
         display: flex;
@@ -273,6 +274,7 @@ body{
     }
 }
 
+/* Desktop breakpoint, from 1080px */
 @media (min-width: 67.5rem){
     .grid-container{
         grid-template-columns: repeat(4, 1fr);
