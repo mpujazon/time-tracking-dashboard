@@ -201,7 +201,7 @@ body{
     color: hsl(228, 45%, 44%);
 }
 
-@media (min-width: 37.5rem) {
+@media (min-width: 40.625rem) {
     body{
         display: flex;
         flex-direction: column;
@@ -210,8 +210,8 @@ body{
         height: 100vh;
     }
     .grid-container{
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(3, auto);
+        grid-template-columns: repeat(3, 11.75rem);
+        grid-template-rows: repeat(3, 13.3125rem);
         max-width: 38.25rem;
         padding: 0;
     }
@@ -261,8 +261,11 @@ body{
         align-items: flex-start;
     }
     .info-row .hours{
-        font-size: 3.5rem;
+        font-size: 2.9rem;
         line-height: 4.125rem;
+    }
+    .info-row .last-period{
+        font-size: .9rem;
     }
     .attribution{
         position: absolute;
@@ -270,12 +273,12 @@ body{
     }
 }
 
-/* TODO: REVIEW CARD WIDTHS */
 @media (min-width: 67.5rem){
     .grid-container{
         grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(2, auto);
+        grid-template-rows: repeat(2, 15.25rem);
         max-width: 69.75rem;
+        padding: 0 var(--spacing-400);
     }
     .main-card{
         grid-column: 1/2;
@@ -291,8 +294,8 @@ body{
         width: 60%;
     }
     .user-card__text h1{
-    }
-    .user-card__text p{
+        font-size: 2.5rem;
+        line-height: 2.9375rem;
     }
     .user-card img{
         width: 4.875rem;
@@ -305,10 +308,43 @@ body{
     #time-categories button{
         text-align: left;
     }
+    .category-card__tab img{
+        scale: .9;
+        bottom: .8rem;
+        left: .2rem;
+    }
+    #exercise-card .category-card__tab img{
+        scale: .7;
+        position: relative;
+        bottom: .8rem;
+        left: 1.2rem;
+    }
+    #social-card .category-card__tab img{
+        scale: 1.2;
+        position: relative;
+        bottom: .3rem;
+        left: -.1rem;
+    }
+    #self-care-card .category-card__tab img{
+        scale: .8;
+        position: relative;
+        bottom: 1.1rem;
+        left: .5rem;
+    }
     .category-card__info{
         gap: var(--spacing-300);
+        height: 199px;
+        margin-top: -35px;
     }
     .category-card__info .ellipsis-icon{
-        scale: 1;
+        transform-origin: right center;
+        scale: .25;
+    }
+    .info-row .hours{
+        font-size: 3.5rem;
+        line-height: 4.125rem;
+    }
+    .info-row .last-period{
+        font-size: .9375rem;
     }
 }
