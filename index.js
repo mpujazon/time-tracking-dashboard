@@ -11,7 +11,7 @@ fetch('/data.json').then((response) => {
     return response.json();
 }).then((data) => {
     // By default, fills the DOM using the weekly data.
-    fillDOM(data, 'weekly');
+    fillDOM(data, 'weekly', true);
     timeButtons[1].classList.add('active');
 
     // Adds an event listener to each time-categories button.
@@ -30,13 +30,12 @@ fetch('/data.json').then((response) => {
 });
 
 // Fills the DOM using the JSON data.
-function fillDOM(data, selectedTimeframe) {
+function fillDOM(data, selectedTimeframe, firstFill) {
     data.forEach(element => {
         // Fills the current hours for each card
-        document.querySelector(`#${normalizeClass(element.title)}-card .hours`).textContent = genCurrentString(element, selectedTimeframe);
-
+        updateTextContent(document.querySelector(`#${normalizeClass(element.title)}-card .hours`),genCurrentString(element, selectedTimeframe), firstFill);
         // Fills the previous hours for each card
-        document.querySelector(`#${normalizeClass(element.title)}-card .last-period`).textContent = genPreviousString(element, selectedTimeframe);
+        updateTextContent(document.querySelector(`#${normalizeClass(element.title)}-card .last-period`), genPreviousString(element, selectedTimeframe), firstFill);
     });
 }
 
@@ -55,4 +54,21 @@ function genCurrentString(element, selectedTimeframe){
 function genPreviousString(element, selectedTimeframe){
     const value = element.timeframes[selectedTimeframe].previous;
     return  previousStrings[selectedTimeframe] + value + (value!==1? "hrs" : "hr");
+}
+
+// Updates the element text content displaying a tiny animation.
+function updateTextContent(element, newContent, firstFill) {
+    if(firstFill){
+        element.textContent = newContent;
+    }else{
+        // Fade out for the actual text
+        gsap.to(element, { opacity: 0, duration: 0.5 });
+    
+        // After the fade out, update the text.
+        setTimeout(() => {
+            element.textContent = newContent;
+            // Fade in after updating the text.
+            gsap.to(element, { opacity: 1, duration: 0.5 });
+        }, 500);
+    }
 }
