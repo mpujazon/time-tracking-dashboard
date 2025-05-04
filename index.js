@@ -32,10 +32,12 @@ fetch('/data.json').then((response) => {
 // Fills the DOM using the JSON data.
 function fillDOM(data, selectedTimeframe, firstFill) {
     data.forEach(element => {
+        const currentHours = document.querySelector(`#${normalizeClass(element.title)}-card .hours`);
+        const previousHours = document.querySelector(`#${normalizeClass(element.title)}-card .last-period`);
         // Fills the current hours for each card
-        updateTextContent(document.querySelector(`#${normalizeClass(element.title)}-card .hours`),genCurrentString(element, selectedTimeframe), firstFill);
+        updateTextContent(currentHours, genCurrentString(element, selectedTimeframe), firstFill);
         // Fills the previous hours for each card
-        updateTextContent(document.querySelector(`#${normalizeClass(element.title)}-card .last-period`), genPreviousString(element, selectedTimeframe), firstFill);
+        updateTextContent(previousHours, genPreviousString(element, selectedTimeframe), firstFill);
     });
 }
 
